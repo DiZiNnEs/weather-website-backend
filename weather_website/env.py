@@ -28,5 +28,3 @@ def env_int(key: str) -> int:
 def env_float(key: str) -> float:
     value = env(key)
     return float(value)
-
-
