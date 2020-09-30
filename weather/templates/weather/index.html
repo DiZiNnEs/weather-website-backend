@@ -2,20 +2,26 @@
 
 {% block head %}
     <title>Home</title>
+
 {% endblock %}
 
 {% block body %}
 
-    <h1>Index</h1>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>Weather</h1>
+        </div>
+    </section>
 
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Add city:</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter city name">
+            {#            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>#}
+        </div>
 
-    <button type="button" class="btn btn-link">Link</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
 {% endblock %}
