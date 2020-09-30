@@ -2,7 +2,8 @@
 
 {% block head %}
     <title>Home</title>
-
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'weather/index.css' %}">
 {% endblock %}
 
 {% block body %}
@@ -13,7 +14,7 @@
         </div>
     </section>
 
-    <form>
+    <form class='form_input'>
         <div class="form-group">
             <label for="exampleInputEmail1">Add city:</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -23,5 +24,15 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
 
 {% endblock %}
