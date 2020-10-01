@@ -10,5 +10,5 @@ async def index(request):
         'sunset': results['sunset'],
         'temp': results['temp'],
     }
-    print(city_weather['temp'])
+    print(city_weather)
     return render(request, 'weather/index.html')
