@@ -28,6 +28,11 @@ async def request(lat: int, lon: int) -> dict:
     return content
 
 
+async def handle_json() -> None:
+    result = await request(31, 32)
+    print(result['current'])
+
+
 if __name__ == '__main__':
     loop = get_event_loop()
-    print(loop.run_until_complete(request(53, 69)))
+    loop.run_until_complete(handle_json())
