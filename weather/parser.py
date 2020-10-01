@@ -19,11 +19,29 @@ async def request(lat: int, lon: int) -> dict:
     return content
 
 
-async def handle_json() -> dict:
+async def current_weather() -> dict:
     result = await request(31, 32)
-    return result['current']
+    return {
+        'data': result['dt'],
+        'sunrise': result['sunrise'],
+        'temp': result['temp'],
+        'fells like': result['fells_like'],
+        'humidity': result['humidity'],
+        'dew point': result['dew_point '],
+        'uvi': result['uvi'],
+        'clouds': result['clouds'],
+        'visibility': result['visibility'],
+        'wind speed': result['wind_speed'],
+        'wind deg': result['wind_deg'],
+        'weather': {
+            'id': result['id'],
+            "main": result['Clouds'],
+            "description": result['broken clouds'],
+            "icon": result['04n']
+        }
+    }
 
 
 if __name__ == '__main__':
     loop = get_event_loop()
-    loop.run_until_complete(handle_json())
+    loop.run_until_complete(current_weather())
