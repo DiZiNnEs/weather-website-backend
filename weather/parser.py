@@ -3,6 +3,10 @@ from asyncio import get_event_loop
 
 from weather_website.env import env
 
+from pyowm import OWM
+from pyowm.utils import config
+from pyowm.utils import timestamps
+
 API_KEY = env('WEATHER_API_KEY')
 user_agent = {
     'User-Agent': env('USER_AGENT')
@@ -22,26 +26,37 @@ async def request(lat: int, lon: int) -> dict:
 async def current_weather() -> dict:
     result = await request(31, 32)
     return {
-        'data': result['dt'],
-        'sunrise': result['sunrise'],
-        'temp': result['temp'],
-        'fells like': result['fells_like'],
-        'humidity': result['humidity'],
-        'dew point': result['dew_point '],
-        'uvi': result['uvi'],
-        'clouds': result['clouds'],
-        'visibility': result['visibility'],
-        'wind speed': result['wind_speed'],
-        'wind deg': result['wind_deg'],
-        'weather': {
-            'id': result['id'],
-            "main": result['Clouds'],
-            "description": result['broken clouds'],
-            "icon": result['04n']
-        }
+        'current':
+            {
+                'data': result['dt'],
+                'sunrise': result['sunrise'],
+                'temp': result['temp'],
+                'fells like': result['fells_like'],
+                'humidity': result['humidity'],
+                'dew point': result['dew_point '],
+                'uvi': result['uvi'],
+                'clouds': result['clouds'],
+                'visibility': result['visibility'],
+                'wind speed': result['wind_speed'],
+                'wind deg': result['wind_deg'],
+                'weather': {
+                    'id': result['id'],
+                    "main": result['Clouds'],
+                    "description": result['broken clouds'],
+                    "icon": result['04n']
+                }
+            }
     }
 
 
-if __name__ == '__main__':
-    loop = get_event_loop()
-    loop.run_until_complete(current_weather())
+def test():
+    owm = OWM(API_KEY)
+    mgr = owm.weather_manager()
+    one_call = mgr.one_call(lat=52.5244, lon=13.4105)
+    print(one_call.forecast_daily)
+
+
+test()
+# if __name__ == '__main__':
+#     loop = get_event_loop()
+#     loop.run_until_complete(test())
