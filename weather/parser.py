@@ -28,9 +28,9 @@ async def request(lat: int, lon: int) -> dict:
     return content
 
 
-async def handle_json() -> None:
+async def handle_json() -> dict:
     result = await request(31, 32)
-    print(result['current'])
+    return result['current']
 
 
 if __name__ == '__main__':
