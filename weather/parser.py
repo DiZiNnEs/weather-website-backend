@@ -49,14 +49,15 @@ async def current_weather() -> dict:
     }
 
 
-def test():
+def pyowm_parser() -> None:
     owm = OWM(API_KEY)
     mgr = owm.weather_manager()
     one_call = mgr.one_call(lat=52.5244, lon=13.4105)
-    print(one_call.forecast_daily)
+    for x in one_call.forecast_daily:
+        print(x)
 
 
-test()
+pyowm_parser()
 # if __name__ == '__main__':
 #     loop = get_event_loop()
 #     loop.run_until_complete(test())
