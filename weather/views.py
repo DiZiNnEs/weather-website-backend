@@ -1,14 +1,14 @@
 from django.shortcuts import render
-from .parser import handle_json
+from .parser import current_weather
 
 
 async def index(request):
-    results = await handle_json()
+    results = await current_weather()
     # print(results)
-    city_weather = {
+    current_weather = {
         'data': results['dt'],
         'sunset': results['sunset'],
         'temp': results['temp'],
     }
-    print(city_weather)
-    return render(request, 'weather/index.html', city_weather)
+    print(current_weather)
+    return render(request, 'weather/index.html', current_weather)
