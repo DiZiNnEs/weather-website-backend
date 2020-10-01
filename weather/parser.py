@@ -1,20 +1,11 @@
 from aiohttp import ClientSession
 from asyncio import get_event_loop
 
-from dotenv import load_dotenv
+from weather_website.env import env
 
-from typing import (
-    Dict,
-    Coroutine,
-    Any,
-)
-
-import os
-
-load_dotenv()
-API_KEY = os.getenv('WEATHER_API_KEY')
+API_KEY = env('WEATHER_API_KEY')
 user_agent = {
-    'User-Agent': os.getenv('USER_AGENT')
+    'User-Agent': env('USER_AGENT')
 }
 
 
