@@ -12,3 +12,9 @@ from typing import (
 import os
 
 API_KEY = os.getenv('WEATHER_API_KEY')
+
+user_agent = {
+    'User-Agent': os.getenv("USER_AGENT")
+}
+
+
