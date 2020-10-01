@@ -14,7 +14,22 @@ import os
 API_KEY = os.getenv('WEATHER_API_KEY')
 
 user_agent = {
-    'User-Agent': os.getenv("USER_AGENT")
+    'User-Agent': os.getenv('USER_AGENT')
 }
+
+
+async def request(lat: int, lon: int) -> str:
+    url = f'https://api.openweathermap.org/data/2.5/onecall?lat=53&lon=69&exclude=weekly&appid={API_KEY}'
+    session = ClientSession()
+    async with session.get(url=url, headers=user_agent) as response_from_server:
+        content = await response_from_server.json()
+    await session.close()
+
+    return content
+
+
+if __name__ == '__main__':
+    loop = get_event_loop()
+    print(loop.run_until_complete(request(53, 69)))
 
 
