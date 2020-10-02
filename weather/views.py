@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from .parser import
+from .parser import current_weather
 
 
 async def index(request):
-
-    return render(request, 'weather/index.html', ...)
+    current = current_weather()
+    print()
+    return render(request, 'weather/index.html', current_weather())
