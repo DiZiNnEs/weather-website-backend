@@ -17,8 +17,8 @@ def current_weather() -> dict:
         'Clouds': one_call.current.clouds,
         'Humidity': one_call.current.humidity,
         'Status': one_call.current.status,
-        'Detailed status': one_call.current.detailed_status,
-        'Visibility distance': one_call.current.visibility_distance,
+        'Detailed_status': one_call.current.detailed_status,
+        'Visibility_distance': one_call.current.visibility_distance,
         'Temperature': one_call.current.temp
     }
 
