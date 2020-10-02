@@ -8,9 +8,9 @@ async def index(request):
         'Clouds': weather_results['Clouds'],
         'Humidity': weather_results['Humidity'],
         'Status': weather_results['Status'],
-        'Detailed status': weather_results['Detailed_status'],
-        'Visibility distance': weather_results['Visibility_distance'],
+        'Detailed_status': weather_results['Detailed_status'],
+        'Visibility_distance': weather_results['Visibility_distance'],
         'Temperature': weather_results['Temperature'],
-
+        'Weather_icon_name': weather_results['Weather_icon_name'],
     }
     return render(request, 'weather/index.html', results)
