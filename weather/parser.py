@@ -1,11 +1,6 @@
-from aiohttp import ClientSession
-from asyncio import get_event_loop
-
 from weather_website.env import env
 
 from pyowm import OWM
-from pyowm.utils import config
-from pyowm.utils import timestamps
 
 API_KEY = env('WEATHER_API_KEY')
 user_agent = {
@@ -17,7 +12,7 @@ mgr = owm.weather_manager()
 one_call = mgr.one_call(lat=52.5244, lon=13.4105)
 
 
-def current_weather():
+def current_weather() -> dict:
     return {
         'Clouds': one_call.current.clouds,
         'Humidity': one_call.current.humidity,
@@ -30,6 +25,3 @@ def current_weather():
 
 print(current_weather())
 
-# if __name__ == '__main__':
-#     loop = get_event_loop()
-#     loop.run_until_complete(test())
