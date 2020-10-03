@@ -1,3 +1,8 @@
+from typing import (
+    List,
+    Dict,
+)
+
 from weather_website.env import env
 
 from pyowm import OWM
@@ -12,7 +17,7 @@ mgr = owm.weather_manager()
 one_call = mgr.one_call(lat=52.5244, lon=13.4105)
 
 
-def current_weather() -> dict:
+def current_weather() -> Dict:
     return {
         'Clouds': one_call.current.clouds,
         'Humidity': one_call.current.humidity,
@@ -24,5 +29,23 @@ def current_weather() -> dict:
     }
 
 
-print(current_weather())
+def forecast_daily() -> List:
+    weather = []
+    day = 1
+    for x in range(0, 7):
+        weather_dict = {
+            f'Weather information for day {day} ': {f'Clouds: {one_call.forecast_daily[x].clouds}',
+                                                    f'Humidity: {one_call.forecast_daily[x].humidity}',
+                                                    f'Status: {one_call.forecast_daily[x].status}',
+                                                    f'Detailed status: {one_call.forecast_daily[x].detailed_status}',
+                                                    f'Visibility distance: {one_call.forecast_daily[x].visibility_distance}',
+                                                    f'Temperature: {one_call.forecast_daily[x].temperature().get("day", None)}',
+                                                    f'Weather_icon_name: {one_call.forecast_daily[x].weather_icon_name}'},
+        }
+        day += 1
+        weather.append(weather_dict)
 
+    return weather
+
+
+print(current_weather())
