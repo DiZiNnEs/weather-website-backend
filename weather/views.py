@@ -17,7 +17,8 @@ async def index(request):
         # forecast
         'Clouds_forecast': weather_forecast[0]['Clouds'],
         'Humidity_forecast': weather_forecast[0]['Humidity'],
-        'Humidity_detailed_status': weather_forecast[0]['Detailed status'],
+        'Status_forecast': weather_current_results['Status'],
+        'Detailed_status_forecast': weather_forecast[0]['Detailed status'],
         'Visibility_distance_forecast': weather_forecast[0]['Visibility distance'],
         'Temperature_forecast': weather_forecast[0]['Temperature'],
         'Weather_icon_name_forecast': weather_forecast[0]['Weather_icon_name'],
