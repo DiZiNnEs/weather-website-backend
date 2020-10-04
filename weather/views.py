@@ -14,6 +14,15 @@ async def index(request):
         'Visibility_distance': weather_current_results['Visibility_distance'],
         'Temperature': weather_current_results['Temperature'],
         'Weather_icon_name': weather_current_results['Weather_icon_name'],
+    }
+
+    return render(request, 'weather/index.html', results)
+
+
+async def forecast_weekly(request):
+    weather_current_results: dict = current_weather()
+    weather_forecast = forecast_daily()
+    results = {
         # forecast
         'Clouds_forecast': weather_forecast[0]['Clouds'],
         'Humidity_forecast': weather_forecast[0]['Humidity'],
@@ -23,7 +32,5 @@ async def index(request):
         'Temperature_forecast': weather_forecast[0]['Temperature'],
         'Weather_icon_name_forecast': weather_forecast[0]['Weather_icon_name'],
     }
-
-    print()
 
     return render(request, 'weather/index.html', results)
