@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'weather/index.css' %}">
+{% endblock %}
+
+{% block body %}
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>Weather</h1>
+        </div>
+    </section>
+
+    <form class='form_input'>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Add city:</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter city name">
+            {#            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>#}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+     <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="http://openweathermap.org/img/w/{{ Weather_icon_name_forecast }}.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            {% csrf_token %}
+            <p class="card-text">Clouds: {{ Clouds_forecast }}</p>
+            <p class="card-text">Humidity: {{ Humidity_forecast }}</p>
+            <p class="card-text">Status: {{ Status_forecast }}</p>
+            <p class="card-text">Detailed status: {{ Detailed_status_forecast }}</p>
+            <p class="card-text">Temperature: {{ Temperature_forecast }}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+{% endblock %}
