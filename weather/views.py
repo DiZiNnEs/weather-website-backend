@@ -15,7 +15,12 @@ async def index(request):
         'Temperature': weather_current_results['Temperature'],
         'Weather_icon_name': weather_current_results['Weather_icon_name'],
         # forecast
-        'Clouds_forecast': weather_forecast[0]['Clouds']
+        'Clouds_forecast': weather_forecast[0]['Clouds'],
+        'Humidity_forecast': weather_forecast[0]['Humidity'],
+        'Humidity_detailed_status': weather_forecast[0]['Detailed status'],
+        'Visibility_distance_forecast': weather_forecast[0]['Visibility distance'],
+        'Temperature_forecast': weather_forecast[0]['Temperature'],
+        'Weather_icon_name_forecast': weather_forecast[0]['Weather_icon_name'],
     }
 
     print()
