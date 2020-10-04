@@ -4,7 +4,6 @@ from .parser import current_weather, forecast_daily
 
 async def index(request):
     weather_current_results: dict = current_weather()
-    weather_forecast = forecast_daily()
     results = {
         # currently:
         'Clouds': weather_current_results['Clouds'],
@@ -20,17 +19,16 @@ async def index(request):
 
 
 async def forecast_weekly(request):
-    weather_current_results: dict = current_weather()
     weather_forecast = forecast_daily()
     results = {
         # forecast
         'Clouds_forecast': weather_forecast[0]['Clouds'],
         'Humidity_forecast': weather_forecast[0]['Humidity'],
-        'Status_forecast': weather_current_results['Status'],
+        'Status_forecast': weather_forecast[0]['Status'],
         'Detailed_status_forecast': weather_forecast[0]['Detailed status'],
         'Visibility_distance_forecast': weather_forecast[0]['Visibility distance'],
         'Temperature_forecast': weather_forecast[0]['Temperature'],
         'Weather_icon_name_forecast': weather_forecast[0]['Weather_icon_name'],
     }
 
-    return render(request, 'weather/index.html', results)
+    return render(request, 'weather/weekly_forecast.html', results)
