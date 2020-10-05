@@ -24,7 +24,7 @@ async def index(request):
 async def forecast_weekly(request):
     weather_forecast = forecast_daily()
     results = {
-        # forecast
+        # weekly
         'Clouds_forecast': weather_forecast[0]['Clouds'],
         'Humidity_forecast': weather_forecast[0]['Humidity'],
         'Status_forecast': weather_forecast[0]['Status'],
