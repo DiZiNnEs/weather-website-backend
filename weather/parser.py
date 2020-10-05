@@ -48,4 +48,4 @@ def forecast_daily() -> List:
     return weather
 
 
-print(current_weather())
+print(forecast_daily())

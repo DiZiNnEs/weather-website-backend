@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from .parser import current_weather, forecast_daily
+from .parser import (
+    current_weather,
+    forecast_daily,
+)
 
 
 async def index(request):
