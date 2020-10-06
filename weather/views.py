@@ -23,6 +23,7 @@ async def index(request):
 
 async def forecast_weekly(request):
     weather_forecast = forecast_daily()
+    results_list = []
     results = {
         # weekly
         'Clouds_forecast': weather_forecast[0]['Clouds'],
@@ -33,7 +34,5 @@ async def forecast_weekly(request):
         'Temperature_forecast': weather_forecast[0]['Temperature'],
         'Weather_icon_name_forecast': weather_forecast[0]['Weather_icon_name'],
     }
-
-    print()
 
     return render(request, 'weather/weekly_forecast.html', weather_forecast)
