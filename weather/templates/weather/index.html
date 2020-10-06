@@ -26,29 +26,16 @@
     </form>
 
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="http://openweathermap.org/img/w/{{ Weather_icon_name }}.png" alt="Card image cap">
+        <img class="card-img-top" src="http://openweathermap.org/img/w/{{ Weather_icon_name }}.png"
+             alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
             {% csrf_token %}
             <p class="card-text">Clouds: {{ Clouds }}</p>
             <p class="card-text">Humidity: {{ Humidity }}</p>
             <p class="card-text">Status: {{ Status }}</p>
-            <p class="card-text">Detailed status: {{ Detailed_status}}</p>
+            <p class="card-text">Detailed status: {{ Detailed_status }}</p>
             <p class="card-text">Temperature: {{ Temperature }}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-
-     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="http://openweathermap.org/img/w/{{ Weather_icon_name_forecast }}.png" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            {% csrf_token %}
-            <p class="card-text">Clouds: {{ Clouds_forecast }}</p>
-            <p class="card-text">Humidity: {{ Humidity_forecast }}</p>
-            <p class="card-text">Status: {{ Status_forecast }}</p>
-            <p class="card-text">Detailed status: {{ Detailed_status_forecast }}</p>
-            <p class="card-text">Temperature: {{ Temperature_forecast }}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
