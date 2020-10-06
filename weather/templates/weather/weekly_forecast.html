@@ -24,19 +24,20 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
+    {% for city_weather in weather_forecast %}
      <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="http://openweathermap.org/img/w/{{ Weather_icon_name_forecast }}.png" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
             {% csrf_token %}
-            <p class="card-text">Clouds: {{ Clouds_forecast }}</p>
-            <p class="card-text">Humidity: {{ Humidity_forecast }}</p>
-            <p class="card-text">Status: {{ Status_forecast }}</p>
-            <p class="card-text">Detailed status: {{ Detailed_status_forecast }}</p>
-            <p class="card-text">Temperature: {{ Temperature_forecast }}</p>
+            <p class="card-text">Clouds: {{ city_weather.Clouds_forecast }}</p>
+            <p class="card-text">Humidity: {{ city_weather.Humidity_forecast }}</p>
+            <p class="card-text">Status: {{ city_weather.Status_forecast }}</p>
+            <p class="card-text">Detailed status: {{ city_weather.Detailed_status_forecast }}</p>
+            <p class="card-text">Temperature: {{ city_weather.Temperature_forecast }}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
+    {% endfor %}
 
 {% endblock %}

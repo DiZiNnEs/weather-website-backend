@@ -34,4 +34,6 @@ async def forecast_weekly(request):
         'Weather_icon_name_forecast': weather_forecast[0]['Weather_icon_name'],
     }
 
-    return render(request, 'weather/weekly_forecast.html', results)
+    print()
+
+    return render(request, 'weather/weekly_forecast.html', weather_forecast)

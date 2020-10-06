@@ -47,5 +47,3 @@ def forecast_daily() -> List:
 
     return weather
 
-
-print(forecast_daily())
