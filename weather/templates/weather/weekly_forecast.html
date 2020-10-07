@@ -26,7 +26,7 @@
     </form>
     {% for city in city_weather %}
      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="http://openweathermap.org/img/w/{{ Weather_icon_name_forecast }}.png" alt="Card image cap">
+        <img class="card-img-top" src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast }}.png" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
             {% csrf_token %}
