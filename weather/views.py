@@ -38,4 +38,6 @@ async def forecast_weekly(request):
         }
         results_list.append(results)
 
-    return render(request, 'weather/weekly_forecast.html', results_list)
+    context = {'city_weather': results}
+
+    return render(request, 'weather/weekly_forecast.html', context)
