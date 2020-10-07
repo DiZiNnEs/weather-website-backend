@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .parser import (
     current_weather,
-    forecast_daily,
+    forecast_daily_parser,
     forecast_hourly_parser
 )
 
@@ -23,7 +23,7 @@ async def index(request):
 
 
 async def forecast_weekly(request):
-    weather_forecast = forecast_daily()
+    weather_forecast = forecast_daily_parser()
     results_list = []
 
     for x in range(0, 7):

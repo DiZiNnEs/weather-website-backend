@@ -29,7 +29,7 @@ def current_weather() -> Dict:
     }
 
 
-def forecast_daily() -> List:
+def forecast_daily_parser() -> List:
     weather = []
     day = 1
     for x in range(0, 7):
