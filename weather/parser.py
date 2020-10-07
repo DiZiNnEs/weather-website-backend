@@ -47,3 +47,24 @@ def forecast_daily() -> List:
 
     return weather
 
+
+def forecast_hourly_parser() -> List:
+    weather = []
+    day = 1
+    for x in range(0, 7):
+        weather_dict = {
+            'Clouds': one_call.forecast_hourly[x].clouds,
+            'Humidity': one_call.forecast_hourly[x].humidity,
+            'Status': one_call.forecast_hourly[x].status,
+            'Detailed status': one_call.forecast_hourly[x].detailed_status,
+            'Visibility distance': one_call.forecast_hourly[x].visibility_distance,
+            'Temperature': one_call.forecast_hourly[x].temperature().get("day", None),
+            'Weather_icon_name': one_call.forecast_hourly[x].weather_icon_name,
+        }
+        day += 1
+        weather.append(weather_dict)
+
+    return weather
+
+
+print(forecast_hourly_parser())
