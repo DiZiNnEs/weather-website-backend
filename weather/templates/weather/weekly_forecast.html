@@ -30,7 +30,7 @@
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
             {% csrf_token %}
-            <p class="card-text">Clouds: {{ city.Clouds }}</p>
+            <p class="card-text">Clouds: {{ city.Clouds_forecast }}</p>
             <p class="card-text">Humidity: {{ city.Humidity_forecast }}</p>
             <p class="card-text">Status: {{ city.Status_forecast }}</p>
             <p class="card-text">Detailed status: {{ city.Detailed_status_forecast }}</p>
