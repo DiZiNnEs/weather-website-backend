@@ -84,3 +84,6 @@ def forecast_minute_parser() -> List:
         weather.append(weather_dict)
 
     return weather
+
+
+print(forecast_minute_parser())
