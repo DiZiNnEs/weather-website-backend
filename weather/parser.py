@@ -24,7 +24,7 @@ def current_weather() -> Dict:
         'Status': one_call.current.status,
         'Detailed_status': one_call.current.detailed_status,
         'Visibility_distance': one_call.current.visibility_distance,
-        'Temperature': one_call.current.temp,
+        'Temperature': one_call.current.temp.get('temp', None),
         'Weather_icon_name': one_call.current.weather_icon_name,
     }
 
@@ -84,6 +84,3 @@ def forecast_minute_parser() -> List:
         weather.append(weather_dict)
 
     return weather
-
-
-print(forecast_minute_parser())
