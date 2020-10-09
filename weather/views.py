@@ -87,3 +87,7 @@ async def forecast_minute(request):
     context = {'city_weather': results_list}
 
     return render(request, 'weather/minute_forecast.html', context)
+
+
+def about(request):
+    return render(request, 'weather/about.html')
