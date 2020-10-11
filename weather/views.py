@@ -26,7 +26,7 @@ async def index(request):
     }
 
     if request.method == 'POST':
-        pass
+        print(request.POST)
 
     return render(request, 'weather/index.html', results)
 
