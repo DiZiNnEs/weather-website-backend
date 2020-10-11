@@ -6,9 +6,13 @@ from .parser import (
     forecast_minute_parser
 )
 
+from .forms import CityForm
+
 
 async def index(request):
     weather_current_results: dict = current_weather()
+    form = CityForm()
+
     results = {
         # currently:
         'Clouds': weather_current_results['Clouds'],
@@ -18,7 +22,11 @@ async def index(request):
         'Visibility_distance': weather_current_results['Visibility_distance'],
         'Temperature': weather_current_results['Temperature'],
         'Weather_icon_name': weather_current_results['Weather_icon_name'],
+        'form': form,
     }
+
+    if request.method == 'POST':
+        pass
 
     return render(request, 'weather/index.html', results)
 
