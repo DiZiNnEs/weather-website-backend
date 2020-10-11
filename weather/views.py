@@ -91,3 +91,6 @@ async def forecast_minute(request):
 
 def about(request):
     return render(request, 'weather/about.html')
+
+def get_user_coordinates(request):
+    return render(request, 'weather/get_user_coordinates.html')
