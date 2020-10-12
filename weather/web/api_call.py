@@ -90,18 +90,15 @@ def weather(weather_='current'):
     weather_list = []
     day = 1
     if weather_ == 'current':
-        for x in range(0, 7):
-            weather_dict = {
-                'Clouds': one_call.forecast_minutely[x].clouds,
-                'Humidity': one_call.forecast_minutely[x].humidity,
-                'Status': one_call.forecast_minutely[x].status,
-                'Detailed status': one_call.forecast_minutely[x].detailed_status,
-                'Visibility distance': one_call.forecast_minutely[x].visibility_distance,
-                'Temperature': one_call.forecast_minutely[x].temperature().get("day", None),
-                'Weather_icon_name': one_call.forecast_minutely[x].weather_icon_name,
-            }
-            day += 1
-            weather_list.append(weather_dict)
+        return {
+            'Clouds': one_call.current.clouds,
+            'Humidity': one_call.current.humidity,
+            'Status': one_call.current.status,
+            'Detailed_status': one_call.current.detailed_status,
+            'Visibility_distance': one_call.current.visibility_distance,
+            'Temperature': one_call.current.temp.get('temp', None),
+            'Weather_icon_name': one_call.current.weather_icon_name,
+        }
 
     elif weather_ == 'minute':
         for x in range(0, 7):
@@ -145,8 +142,20 @@ def weather(weather_='current'):
             day += 1
             weather_list.append(weather_dict)
 
+    elif weather_ == 'weekly':
+        for x in range(0, 7):
+            weather_dict = {
+                'Clouds': one_call.forecast_daily[x].clouds,
+                'Humidity': one_call.forecast_daily[x].humidity,
+                'Status': one_call.forecast_daily[x].status,
+                'Detailed status': one_call.forecast_daily[x].detailed_status,
+                'Visibility distance': one_call.forecast_daily[x].visibility_distance,
+                'Temperature': one_call.forecast_daily[x].temperature().get("day", None),
+                'Weather_icon_name': one_call.forecast_daily[x].weather_icon_name,
+            }
+            day += 1
+            weather_list.append(weather_dict)
+
     return weather_list
 
-
-print(weather('hourly'))
 
