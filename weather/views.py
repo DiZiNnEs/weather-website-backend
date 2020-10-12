@@ -1,14 +1,6 @@
 from django.shortcuts import render
-from weather.web.api_call import (
-    current_weather,
-    forecast_daily_parser,
-    forecast_hourly_parser,
-    forecast_minute_parser
-)
 
 from .web.api_call import weather
-
-
 from .forms import CityForm
 
 
