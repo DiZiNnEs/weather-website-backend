@@ -100,5 +100,15 @@ async def forecast_minute(request):
 def about(request):
     return render(request, 'weather/about.html')
 
+
 def get_user_coordinates(request):
-    return render(request, 'weather/get_user_coordinates.html')
+    form = CityForm()
+
+    results_to_templates = {
+        'form': form
+    }
+
+    if request.method == 'POST':
+        print(request.POST)
+
+    return render(request, 'weather/get_user_coordinates.html', results_to_templates)
