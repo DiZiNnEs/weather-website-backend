@@ -8,10 +8,12 @@
 
 {% block body %}
     <form class='form_input'>
+        {% csrf_token %}
         <div class="form-group">
             <label for="exampleInputEmail1">Get your coordinates</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="Enter city name">
+{#            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"#}
+{#                   placeholder="Enter city name">#}
+            {{ form.name }}
             {#            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>#}
         </div>
 
