@@ -6,11 +6,14 @@ from weather.web.api_call import (
     forecast_minute_parser
 )
 
+from .web.api_call import weather
+
+
 from .forms import CityForm
 
 
 async def index(request):
-    weather_current_results: dict = current_weather()
+    weather_current_results: dict = weather('current')
     form = CityForm()
 
     results = {
@@ -31,8 +34,8 @@ async def index(request):
     return render(request, 'weather/index.html', results)
 
 
-async def forecast_weekly(request):
-    weather_forecast = forecast_daily_parser()
+async def forecast_daily(request):
+    weather_forecast = weather('daily')
     results_list = []
 
     for x in range(0, 7):
@@ -54,7 +57,7 @@ async def forecast_weekly(request):
 
 
 async def forecast_hourly(request):
-    weather_forecast = forecast_hourly_parser()
+    weather_forecast = weather('hourly')
     results_list = []
 
     for x in range(0, 7):
@@ -76,7 +79,7 @@ async def forecast_hourly(request):
 
 
 async def forecast_minute(request):
-    weather_forecast = forecast_minute_parser()
+    weather_forecast = weather('minute')
     results_list = []
 
     for x in range(0, 7):
