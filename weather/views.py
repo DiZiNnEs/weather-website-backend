@@ -97,10 +97,6 @@ async def forecast_minute(request):
     return render(request, 'weather/minute_forecast.html', context)
 
 
-def about(request):
-    return render(request, 'weather/about.html')
-
-
 def get_user_coordinates(request):
     form = CityForm()
 
@@ -112,3 +108,7 @@ def get_user_coordinates(request):
         print(request.POST)
 
     return render(request, 'weather/get_user_coordinates.html', results_to_templates)
+
+
+def about(request):
+    return render(request, 'weather/about.html')
