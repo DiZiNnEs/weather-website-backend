@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .parser import (
+from weather.web.api_call import (
     current_weather,
     forecast_daily_parser,
     forecast_hourly_parser,
