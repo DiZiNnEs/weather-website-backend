@@ -1,11 +1,11 @@
 from typing import (
-    List,
     Dict,
+    List,
 )
 
-from weather_website.env import env
-
 from pyowm import OWM
+
+from weather_website.env import env
 
 API_KEY = env('WEATHER_API_KEY')
 user_agent = {
@@ -17,7 +17,7 @@ mgr = owm.weather_manager()
 one_call = mgr.one_call(lat=52.5244, lon=13.4105)
 
 
-def weather(weather_='current'):
+def weather(weather_: str) -> Dict or List:
     weather_list = []
     day = 1
     if weather_ == 'current':
@@ -88,5 +88,3 @@ def weather(weather_='current'):
             weather_list.append(weather_dict)
 
     return weather_list
-
-
