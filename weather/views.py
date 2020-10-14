@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .web.api_call import weather
 from .forms import CityForm
 
+from .web import geoapi
 
 async def index(request):
     weather_current_results: dict = weather('current')
@@ -101,6 +102,8 @@ def get_user_coordinates(request):
 
     if request.method == 'POST':
         print(request.POST)
+        print(request.POST.get('name'))
+        print(geoapi.get_coordinates(request.POST.get('name')))
 
     return render(request, 'weather/get_user_coordinates.html', results_to_templates)
 

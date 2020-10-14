@@ -19,6 +19,3 @@ def get_coordinates(city: str) -> Dict[str, float]:
     request = mgr.weather_at_place(city)
     return {'lat': request.location.lat,
             'lon': request.location.lon}
-
-
-print(get_coordinates('Kokshetau'))
