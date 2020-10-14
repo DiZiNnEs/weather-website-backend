@@ -21,6 +21,8 @@
                    placeholder="Enter city name">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+                 <a href="{% url 'get_user_coordinates' %}">Get my location</a>
+
     </form>
     {% for city in city_weather %}
         <div class="card" style="width: 11rem;" >
