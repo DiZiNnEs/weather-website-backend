@@ -5,6 +5,7 @@ from .forms import CityForm
 
 from .web import geoapi
 
+
 async def index(request):
     weather_current_results: dict = weather('current')
     form = CityForm()
@@ -95,15 +96,17 @@ async def forecast_minute(request):
 
 def get_user_coordinates(request):
     form = CityForm()
-
-    results_to_templates = {
-        'form': form
-    }
+    lan_and_lon = ''
 
     if request.method == 'POST':
         print(request.POST)
         print(request.POST.get('name'))
-        print(geoapi.get_coordinates(request.POST.get('name')))
+        lan_and_lon = geoapi.get_coordinates(request.POST.get('name'))
+
+    results_to_templates = {
+        'form': form,
+        'lan_and_lon': lan_and_lon
+    }
 
     return render(request, 'weather/get_user_coordinates.html', results_to_templates)
 
