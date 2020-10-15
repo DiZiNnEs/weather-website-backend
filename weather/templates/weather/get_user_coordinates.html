@@ -13,7 +13,16 @@
             <label for="exampleInputEmail1">Get your coordinates</label>
             {{ form.name }}
         </div>
-
         <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+
+        <h3>
+            Your lat is
+            <small class="text-muted">{{ lan_and_lon.lat }}</small>
+        </h3>
+        <h3>
+            Your lon is
+            <small class="text-muted">{{ lan_and_lon.lon }}</small>
+        </h3>
     </form>
 {% endblock %}
