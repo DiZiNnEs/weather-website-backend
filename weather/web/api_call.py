@@ -88,3 +88,36 @@ def weather(weather_: str) -> Dict or List:
             weather_list.append(weather_dict)
 
     return weather_list
+
+
+def weather_all():
+    weather_list = []
+    for x in range(0, 7):
+        weather_dict = {
+            'Clouds_daily': one_call.forecast_daily[x].clouds,
+            'Humidity_daily': one_call.forecast_daily[x].humidity,
+            'Status_daily': one_call.forecast_daily[x].status,
+            'Detailed status_daily': one_call.forecast_daily[x].detailed_status,
+            'Visibility distance_daily': one_call.forecast_daily[x].visibility_distance,
+            'Temperature_daily': one_call.forecast_daily[x].temperature().get("day", None),
+            'Weather_icon_name_daily': one_call.forecast_daily[x].weather_icon_name,
+
+            'Clouds_hourly': one_call.forecast_hourly[x].clouds,
+            'Humidity_hourly': one_call.forecast_hourly[x].humidity,
+            'Status_hourly': one_call.forecast_hourly[x].status,
+            'Detailed status_hourly': one_call.forecast_hourly[x].detailed_status,
+            'Visibility distance_hourly': one_call.forecast_hourly[x].visibility_distance,
+            'Temperature_hourly': one_call.forecast_hourly[x].temperature().get("day", None),
+            'Weather_icon_name_hourly': one_call.forecast_hourly[x].weather_icon_name,
+
+            'Clouds_minutely': one_call.forecast_minutely[x].clouds,
+            'Humidity_minutely': one_call.forecast_minutely[x].humidity,
+            'Status_minutely': one_call.forecast_minutely[x].status,
+            'Detailed status_minutely': one_call.forecast_minutely[x].detailed_status,
+            'Visibility distance_minutely': one_call.forecast_minutely[x].visibility_distance,
+            'Temperature_minutely': one_call.forecast_minutely[x].temperature().get("day", None),
+            'Weather_icon_name_minutely': one_call.forecast_minutely[x].weather_icon_name,
+        }
+        weather_list.append(weather_dict)
+
+    return weather_list
