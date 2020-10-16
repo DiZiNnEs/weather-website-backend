@@ -23,6 +23,8 @@
         <button type="submit" class="btn btn-primary">Submit</button>
         <a href="{% url 'get_user_coordinates' %}">Get my location</a>
     </form>
+
+
     {% for city in city_weather %}
         <div class="card" style="width: 11rem;" >
             <img class="card-img-top" src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast_daily }}.png"
@@ -35,6 +37,40 @@
                 <p class="card-text">Status: {{ city.Status_daily }}</p>
                 <p class="card-text">Detailed status: {{ city.Detailed_status_daily }}</p>
                 <p class="card-text">Temperature: {{ city.Temperature_daily }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+    <p>Next weather</p>
+
+    {% for city in city_weather %}
+        <div class="card" style="width: 11rem;" >
+            <img class="card-img-top" src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast_hourly }}.png"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                {% csrf_token %}
+                <p class="card-text">Clouds: {{ city.Clouds_hourly }}</p>
+                <p class="card-text">Humidity: {{ city.Humidity_hourly }}</p>
+                <p class="card-text">Status: {{ city.Status_hourly }}</p>
+                <p class="card-text">Detailed status: {{ city.Detailed_status_hourly }}</p>
+                <p class="card-text">Temperature: {{ city.Temperature_hourly }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% for city in city_weather %}
+        <div class="card" style="width: 11rem;" >
+            <img class="card-img-top" src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast_minutely }}.png"
+                 alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                {% csrf_token %}
+                <p class="card-text">Clouds: {{ city.Clouds_minutely }}</p>
+                <p class="card-text">Humidity: {{ city.Humidity_minutely }}</p>
+                <p class="card-text">Status: {{ city.Status_minutely }}</p>
+                <p class="card-text">Detailed status: {{ city.Detailed_status_minutely }}</p>
+                <p class="card-text">Temperature: {{ city.Temperature_minutely }}</p>
             </div>
         </div>
     {% endfor %}
