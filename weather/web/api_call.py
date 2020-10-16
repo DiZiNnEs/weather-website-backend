@@ -90,9 +90,20 @@ def weather(weather_: str) -> Dict or List:
     return weather_list
 
 
-def weather_all():
+def weather_all() -> Dict or List:
     weather_list = []
-    for x in range(0, 7):
+
+    weather_list.append({
+        'Clouds_currently': one_call.current.clouds,
+        'Humidity_currently': one_call.current.humidity,
+        'Status_currently': one_call.current.status,
+        'Detailed_status_currently': one_call.current.detailed_status,
+        'Visibility_distance_currently': one_call.current.visibility_distance,
+        'Temperature_currently': one_call.current.temp.get('temp', None),
+        'Weather_icon_name_currently': one_call.current.weather_icon_name,
+    })
+
+    for x in range(1, 8):
         weather_dict = {
             'Clouds_daily': one_call.forecast_daily[x].clouds,
             'Humidity_daily': one_call.forecast_daily[x].humidity,
@@ -119,15 +130,5 @@ def weather_all():
             'Weather_icon_name_minutely': one_call.forecast_minutely[x].weather_icon_name,
         }
         weather_list.append(weather_dict)
-
-    weather_list.append({
-        'Clouds': one_call.current.clouds,
-        'Humidity': one_call.current.humidity,
-        'Status': one_call.current.status,
-        'Detailed_status': one_call.current.detailed_status,
-        'Visibility_distance': one_call.current.visibility_distance,
-        'Temperature': one_call.current.temp.get('temp', None),
-        'Weather_icon_name': one_call.current.weather_icon_name,
-    })
 
     return weather_list
