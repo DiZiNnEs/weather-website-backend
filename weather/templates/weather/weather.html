@@ -24,24 +24,6 @@
         <a href="{% url 'get_user_coordinates' %}">Get my location</a>
     </form>
 
-    <p>CURRENTLY</p>
-
-    <div class="card" style="width: 11rem;">
-        <img class="card-img-top" src="http://openweathermap.org/img/w/{{ Weather_icon_name }}.png"
-             alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            {% csrf_token %}
-            <p class="card-text">Clouds: {{ city_weather }}</p>
-            <p class="card-text">Humidity: {{ city_weather.Humidity_currently }}</p>
-            <p class="card-text">Status: {{ city_weather.Status_currently }}</p>
-            <p class="card-text">Detailed status: {{ city_weather.Detailed_status_currently }}</p>
-            <p class="card-text">Temperature: {{ city_weather.Temperature_currently }}</p>
-        </div>
-    </div>
-
-    <p>CURRENTLY END</p>
-
     <p>Daily</p>
     {% for city in city_weather %}
         <div class="card" style="width: 11rem;" >
@@ -58,8 +40,6 @@
             </div>
         </div>
     {% endfor %}
-
-    <p>Next weather</p>
 
     {% for city in city_weather %}
         <div class="card" style="width: 11rem;" >
