@@ -26,8 +26,9 @@
 
     <p>Daily</p>
     {% for city in city_weather %}
-        <div class="card" style="width: 11rem;" >
-            <img class="card-img-top" src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast_daily }}.png"
+        <div class="card" style="width: 11rem;">
+            <img class="card-img-top"
+                 src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast_daily }}.png"
                  alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -42,8 +43,9 @@
     {% endfor %}
 
     {% for city in city_weather %}
-        <div class="card" style="width: 11rem;" >
-            <img class="card-img-top" src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast_hourly }}.png"
+        <div class="card" style="width: 11rem;">
+            <img class="card-img-top"
+                 src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast_hourly }}.png"
                  alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -58,8 +60,9 @@
     {% endfor %}
 
     {% for city in city_weather %}
-        <div class="card" style="width: 11rem;" >
-            <img class="card-img-top" src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast_minutely }}.png"
+        <div class="card" style="width: 11rem;">
+            <img class="card-img-top"
+                 src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast_minutely }}.png"
                  alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
