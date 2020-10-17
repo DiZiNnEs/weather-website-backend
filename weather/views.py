@@ -49,34 +49,34 @@ def about(request):
     return render(request, 'weather/about.html')
 
 
-def __weather_all(request):
-    weather = weather_all()
+def weather(request):
+    call_weather = weather_all()
     results_list = []
     for x in range(0, 7):
         results = {
-            'Clouds_daily': weather[x]['Clouds_daily'],
-            'Humidity_daily': weather[x]['Humidity_daily'],
-            'Status_daily': weather[x]['Status_daily'],
-            'Detailed_status_daily': weather[x]['Detailed status_daily'],
-            'Visibility_distance_forecast_daily': weather[x]['Visibility distance_daily'],
-            'Temperature_forecast_daily': weather[x]['Temperature_daily'],
-            'Weather_icon_name_forecast_daily': weather[x]['Weather_icon_name_daily'],
+            'Clouds_daily': call_weather[x]['Clouds_daily'],
+            'Humidity_daily': call_weather[x]['Humidity_daily'],
+            'Status_daily': call_weather[x]['Status_daily'],
+            'Detailed_status_daily': call_weather[x]['Detailed status_daily'],
+            'Visibility_distance_forecast_daily': call_weather[x]['Visibility distance_daily'],
+            'Temperature_forecast_daily': call_weather[x]['Temperature_daily'],
+            'Weather_icon_name_forecast_daily': call_weather[x]['Weather_icon_name_daily'],
 
-            'Clouds_hourly': weather[x]['Clouds_hourly'],
-            'Humidity_hourly': weather[x]['Humidity_hourly'],
-            'Status_hourly': weather[x]['Status_hourly'],
-            'Detailed_status_hourly': weather[x]['Detailed status_hourly'],
-            'Visibility_distance_forecast_hourly': weather[x]['Visibility distance_hourly'],
-            'Temperature_forecast_hourly': weather[x]['Temperature_hourly'],
-            'Weather_icon_name_forecast_hourly': weather[x]['Weather_icon_name_hourly'],
+            'Clouds_hourly': call_weather[x]['Clouds_hourly'],
+            'Humidity_hourly': call_weather[x]['Humidity_hourly'],
+            'Status_hourly': call_weather[x]['Status_hourly'],
+            'Detailed_status_hourly': call_weather[x]['Detailed status_hourly'],
+            'Visibility_distance_forecast_hourly': call_weather[x]['Visibility distance_hourly'],
+            'Temperature_forecast_hourly': call_weather[x]['Temperature_hourly'],
+            'Weather_icon_name_forecast_hourly': call_weather[x]['Weather_icon_name_hourly'],
 
-            'Clouds_minutely': weather[x]['Clouds_minutely'],
-            'Humidity_minutely': weather[x]['Humidity_minutely'],
-            'Status_minutely': weather[x]['Status_minutely'],
-            'Detailed_status_minutely': weather[x]['Detailed status_minutely'],
-            'Visibility_distance_forecast_minutely': weather[x]['Visibility distance_minutely'],
-            'Temperature_forecast_minutely': weather[x]['Temperature_minutely'],
-            'Weather_icon_name_forecast_minutely': weather[x]['Weather_icon_name_minutely'],
+            'Clouds_minutely': call_weather[x]['Clouds_minutely'],
+            'Humidity_minutely': call_weather[x]['Humidity_minutely'],
+            'Status_minutely': call_weather[x]['Status_minutely'],
+            'Detailed_status_minutely': call_weather[x]['Detailed status_minutely'],
+            'Visibility_distance_forecast_minutely': call_weather[x]['Visibility distance_minutely'],
+            'Temperature_forecast_minutely': call_weather[x]['Temperature_minutely'],
+            'Weather_icon_name_forecast_minutely': call_weather[x]['Weather_icon_name_minutely'],
         }
         results_list.append(results)
     context = {'city_weather': results_list}
