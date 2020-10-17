@@ -118,19 +118,7 @@ def about(request):
 def __weather_all(request):
     weather = weather_all()
     results_list = []
-
-    currently = {
-        'Clouds': weather[0]['Clouds_currently'],
-        'Humidity': weather[0]['Humidity_currently'],
-        'Status': weather[0]['Status_currently'],
-        'Detailed_status': weather[0]['Detailed_status_currently'],
-        'Visibility_distance': weather[0]['Visibility_distance_currently'],
-        'Temperature': weather[0]['Temperature_currently'],
-        'Weather_icon_name': weather[0]['Weather_icon_name_currently'],
-    }
-    results_list.append(currently)
-
-    for x in range(1, 8):
+    for x in range(0, 7):
         results = {
             'Clouds_daily': weather[x]['Clouds_daily'],
             'Humidity_daily': weather[x]['Humidity_daily'],
@@ -157,7 +145,6 @@ def __weather_all(request):
             'Weather_icon_name_forecast_minutely': weather[x]['Weather_icon_name_minutely'],
         }
         results_list.append(results)
-
     context = {'city_weather': results_list}
 
     return render(request, 'weather/weather.html', context)
