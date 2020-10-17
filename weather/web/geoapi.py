@@ -21,5 +21,5 @@ def get_coordinates(city: str) -> Dict[str, float] or str:
         request = mgr.weather_at_place(city)
         return {'lat': request.location.lat,
                 'lon': request.location.lon}
-    except NotFoundError as ex:
+    except NotFoundError:
         return 'Unable tp find the resource'
