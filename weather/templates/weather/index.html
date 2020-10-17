@@ -13,16 +13,16 @@
             <h1>Current forecast</h1>
         </div>
     </section>
-    <form class='form_input' method="POST">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="exampleInputEmail1">Add city:</label>
-            {{ form.name }}
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <a href="{% url 'get_user_coordinates' %}">Get my location</a>
-    </form>
+{#    <form class='form_input' method="POST">#}
+{#        {% csrf_token %}#}
+{#        <div class="form-group">#}
+{#            <label for="exampleInputEmail1">Add city:</label>#}
+{#            {{ form.name }}#}
+{#        </div>#}
+{##}
+{#        <button type="submit" class="btn btn-primary">Submit</button>#}
+{#        <a href="{% url 'get_user_coordinates' %}">Get my location</a>#}
+{#    </form>#}
 
     <div class="card" style="width: 11rem;">
         <img class="card-img-top" src="http://openweathermap.org/img/w/{{ Weather_icon_name }}.png"
