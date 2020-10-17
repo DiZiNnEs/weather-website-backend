@@ -17,7 +17,7 @@ mgr = owm.weather_manager()
 one_call = mgr.one_call(lat=52.5244, lon=13.4105)
 
 
-def weather_all(weather_: str) -> Dict or List:
+def weather_current(weather_: str) -> Dict or List:
     weather_list = []
     day = 1
     if weather_ == 'current':

@@ -1,13 +1,13 @@
 from django.shortcuts import render
 
-from .web.api_call import weather_all, weather_all
+from .web.api_call import weather_all, weather_current
 from .forms import CityForm
 
 from .web import geoapi
 
 
 async def index(request):
-    weather_current_results: dict = weather_all('current')
+    weather_current_results: dict = weather_current('current')
     form = CityForm()
 
     results = {
