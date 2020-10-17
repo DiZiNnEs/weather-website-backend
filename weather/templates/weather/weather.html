@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <title>Minute</title>
+    <title>Weather</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'weather/index.css' %}">
 {% endblock %}
@@ -10,7 +10,7 @@
 
     <section class="jumbotron text-center">
         <div class="container">
-            <h1>Minute forecast</h1>
+            <h1>All weather</h1>
         </div>
     </section>
 
@@ -23,8 +23,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
         <a href="{% url 'get_user_coordinates' %}">Get my location</a>
     </form>
-
-    <p>Daily</p>
+    <h1>Daily weather</h1>
     {% for city in city_weather %}
         <div class="card" style="width: 11rem;">
             <img class="card-img-top"
@@ -42,6 +41,7 @@
         </div>
     {% endfor %}
 
+    <h1>Hourly weather</h1>
     {% for city in city_weather %}
         <div class="card" style="width: 11rem;">
             <img class="card-img-top"
@@ -58,6 +58,8 @@
             </div>
         </div>
     {% endfor %}
+
+    <h1>Minutely weather</h1>
 
     {% for city in city_weather %}
         <div class="card" style="width: 11rem;">
