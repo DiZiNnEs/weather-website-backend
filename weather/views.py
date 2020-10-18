@@ -11,11 +11,23 @@ async def index(request):
 
     results = {
         'Clouds': weather_current_results['Clouds'],
+        'Dewpoint': weather_current_results['Dewpoint'],
+        'Heat_index': weather_current_results['Heat_index'],
+        'humidex': weather_current_results['humidex'],
         'Humidity': weather_current_results['Humidity'],
+        'Pressure': weather_current_results['Pressure'],
+        'Rain': weather_current_results['Rain'],
+        'Ref_time': weather_current_results['Ref_time'],
+        'Snow': weather_current_results['Snow'],
+        'Srise_time': weather_current_results['Srise_time'],
+        'sset_time': weather_current_results['sset_time'],
         'Status': weather_current_results['Status'],
         'Detailed_status': weather_current_results['Detailed_status'],
         'Visibility_distance': weather_current_results['Visibility_distance'],
         'Temperature': weather_current_results['Temperature'],
+        'Utc_offset': weather_current_results['Utc_offset'],
+        'Uvi': weather_current_results['Uvi'],
+        'Wind': weather_current_results['Wind'],
         'Weather_icon_name': weather_current_results['Weather_icon_name'],
     }
 
