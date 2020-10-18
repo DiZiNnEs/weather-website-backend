@@ -20,11 +20,23 @@ one_call = mgr.one_call(lat=52.5244, lon=13.4105)
 def weather_current() -> Dict or List:
     return {
         'Clouds': one_call.current.clouds,
-        'Humidity': one_call.current.humidity,
-        'Status': one_call.current.status,
         'Detailed_status': one_call.current.detailed_status,
-        'Visibility_distance': one_call.current.visibility_distance,
+        'Dewpoint': one_call.current.dewpoint,
+        'Heat_index': one_call.current.heat_index,
+        'humidex': one_call.current.humidex,
+        'Humidity': one_call.current.humidity,
+        'Pressure': one_call.current.pressure,
+        'Rain': one_call.current.rain,
+        'Ref_time': one_call.current.ref_time,
+        'Snow': one_call.current.snow,
+        'Srise_time': one_call.current.srise_time,
+        'sset_time': one_call.current.sset_time,
+        'Status': one_call.current.status,
         'Temperature': one_call.current.temp.get('temp', None),
+        'Utc_offset': one_call.current.utc_offset,
+        'Uvi': one_call.current.uvi,
+        'Visibility_distance': one_call.current.visibility_distance,
+        'Wind': one_call.current.wind,
         'Weather_icon_name': one_call.current.weather_icon_name,
     }
 
