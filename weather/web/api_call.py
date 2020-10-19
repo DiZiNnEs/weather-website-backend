@@ -16,7 +16,7 @@ owm = OWM(API_KEY)
 mgr = owm.weather_manager()
 one_call = mgr.one_call(lat=52.5244, lon=13.4105)
 
-
+print()
 def weather_current() -> Dict or List:
     return {
         'Clouds': one_call.current.clouds,
@@ -47,11 +47,23 @@ def weather_all() -> Dict or List:
     for x in range(0, 7):
         weather_dict = {
             'Clouds_daily': one_call.forecast_daily[x].clouds,
-            'Humidity_daily': one_call.forecast_daily[x].humidity,
+            'Dewpoint_daily': one_call.forecast_daily[x].dewpoint,
+            'Heat_index_daily': one_call.forecast_daily[x].heat_index,
+            'humidex_daily': one_call.forecast_daily[x].humidex,
+            'Pressure_daily': one_call.forecast_daily[x].pressure,
+            'Rain_daily': one_call.forecast_daily[x].rain,
+            'Ref_time_daily': one_call.forecast_daily[x].ref_time,
+            'Snow_daily': one_call.forecast_daily[x].snow,
+            'Srise_time_daily': one_call.forecast_daily[x].srise_time,
+            'sset_time_daily': one_call.forecast_daily[x].sset_time,
+            'Humidity_daily_daily': one_call.forecast_daily[x].humidity,
+            'Utc_offset_daily': one_call.forecast_daily[x].utc_offset,
+            'Uvi_daily': one_call.forecast_daily[x].uvi,
             'Status_daily': one_call.forecast_daily[x].status,
             'Detailed status_daily': one_call.forecast_daily[x].detailed_status,
             'Visibility distance_daily': one_call.forecast_daily[x].visibility_distance,
             'Temperature_daily': one_call.forecast_daily[x].temperature().get("day", None),
+            'Wind_daily': one_call.forecast_daily[x].wind,
             'Weather_icon_name_daily': one_call.forecast_daily[x].weather_icon_name,
 
             'Clouds_hourly': one_call.forecast_hourly[x].clouds,
