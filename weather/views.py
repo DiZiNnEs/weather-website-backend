@@ -56,11 +56,10 @@ def weather(request):
             'sset_time_daily': call_weather[get_weather_information]['sset_time_daily'],
             'Utc_offset_daily': call_weather[get_weather_information]['Utc_offset_daily'],
             'Uvi_daily': call_weather[get_weather_information]['Uvi_daily'],
-            'Detailed status_daily': call_weather[get_weather_information]['Detailed status_daily'],
-            'Visibility distance_daily': call_weather[get_weather_information]['Visibility distance_daily'],
+            'Detailed_status_daily': call_weather[get_weather_information]['Detailed status_daily'],
+            'Visibility_distance_daily': call_weather[get_weather_information]['Visibility distance_daily'],
             'Temperature_daily': call_weather[get_weather_information]['Temperature_daily'],
             'Wind_daily': call_weather[get_weather_information]['Wind_daily'],
-
 
             'Clouds_hourly': call_weather[get_weather_information]['Clouds_hourly'],
             'Humidity_hourly': call_weather[get_weather_information]['Humidity_hourly'],
@@ -79,11 +78,10 @@ def weather(request):
             'sset_time_hourly': call_weather[get_weather_information]['sset_time_hourly'],
             'Utc_offset_hourly': call_weather[get_weather_information]['Utc_offset_hourly'],
             'Uvi_hourly': call_weather[get_weather_information]['Uvi_hourly'],
-            'Detailed status_hourly': call_weather[get_weather_information]['Detailed status_hourly'],
-            'Visibility distance_hourly': call_weather[get_weather_information]['Visibility distance_hourly'],
+            'Detailed_status_hourly': call_weather[get_weather_information]['Detailed status_hourly'],
+            'Visibility_distance_hourly': call_weather[get_weather_information]['Visibility distance_hourly'],
             'Temperature_hourly': call_weather[get_weather_information]['Temperature_hourly'],
             'Wind_hourly': call_weather[get_weather_information]['Wind_hourly'],
-
 
             'Clouds_minutely': call_weather[get_weather_information]['Clouds_minutely'],
             'Humidity_minutely': call_weather[get_weather_information]['Humidity_minutely'],
@@ -103,8 +101,8 @@ def weather(request):
             'sset_time_minutely': call_weather[get_weather_information]['sset_time_minutely'],
             'Utc_offset_minutely': call_weather[get_weather_information]['Utc_offset_minutely'],
             'Uvi_minutely': call_weather[get_weather_information]['Uvi_minutely'],
-            'Detailed status_minutely': call_weather[get_weather_information]['Detailed status_minutely'],
-            'Visibility distance_minutely': call_weather[get_weather_information]['Visibility distance_minutely'],
+            'Detailed_status_minutely': call_weather[get_weather_information]['Detailed status_minutely'],
+            'Visibility_distance_minutely': call_weather[get_weather_information]['Visibility distance_minutely'],
             'Temperature_minutely': call_weather[get_weather_information]['Temperature_minutely'],
             'Wind_minutely': call_weather[get_weather_information]['Wind_minutely'],
         }
