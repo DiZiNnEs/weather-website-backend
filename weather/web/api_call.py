@@ -16,6 +16,8 @@ owm = OWM(API_KEY)
 mgr = owm.weather_manager()
 one_call = mgr.one_call(lat=52.5244, lon=13.4105)
 
+print()
+
 
 def weather_current() -> Dict or List:
     return {
@@ -86,25 +88,6 @@ def weather_all() -> Dict or List:
             'Wind_hourly': one_call.forecast_hourly[x].wind,
             'Weather_icon_name_hourly': one_call.forecast_hourly[x].weather_icon_name,
 
-            'Clouds_minutely': one_call.forecast_minutely[x].clouds,
-            'Dewpoint_minutely': one_call.forecast_minutely[x].dewpoint,
-            'Heat_index_minutely': one_call.forecast_minutely[x].heat_index,
-            'humidex_minutely': one_call.forecast_minutely[x].humidex,
-            'Pressure_minutely': one_call.forecast_minutely[x].pressure,
-            'Rain_minutely': one_call.forecast_minutely[x].rain,
-            'Ref_time_minutely': one_call.forecast_minutely[x].ref_time,
-            'Snow_minutely': one_call.forecast_minutely[x].snow,
-            'Srise_time_minutely': one_call.forecast_minutely[x].srise_time,
-            'sset_time_minutely': one_call.forecast_minutely[x].sset_time,
-            'Humidity_minutely': one_call.forecast_minutely[x].humidity,
-            'Utc_offset_minutely': one_call.forecast_minutely[x].utc_offset,
-            'Uvi_minutely': one_call.forecast_minutely[x].uvi,
-            'Status_minutely': one_call.forecast_minutely[x].status,
-            'Detailed status_minutely': one_call.forecast_minutely[x].detailed_status,
-            'Visibility distance_minutely': one_call.forecast_minutely[x].visibility_distance,
-            'Temperature_minutely': one_call.forecast_minutely[x].temperature().get("day", None),
-            'Wind_minutely': one_call.forecast_minutely[x].wind,
-            'Weather_icon_name_minutely': one_call.forecast_minutely[x].weather_icon_name,
         }
         weather_list.append(weather_dict)
 
