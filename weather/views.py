@@ -81,27 +81,6 @@ def weather(request):
             'Temperature_hourly': call_weather[get_weather_information]['Temperature_hourly'],
             'Wind_hourly': call_weather[get_weather_information]['Wind_hourly'],
 
-            'Clouds_minutely': call_weather[get_weather_information]['Clouds_minutely'],
-            'Humidity_minutely': call_weather[get_weather_information]['Humidity_minutely'],
-            'Status_minutely': call_weather[get_weather_information]['Status_minutely'],
-            'Detailed_status_minutely': call_weather[get_weather_information]['Detailed status_minutely'],
-            'Visibility_distance_forecast_minutely': call_weather[get_weather_information][
-                'Visibility distance_minutely'],
-            'Temperature_forecast_minutely': call_weather[get_weather_information]['Temperature_minutely'],
-            'Weather_icon_name_forecast_minutely': call_weather[get_weather_information]['Weather_icon_name_minutely'],
-            #  new minutely
-            'Heat_index_minutely': call_weather[get_weather_information]['Heat_index_minutely'],
-            'Pressure_minutely': call_weather[get_weather_information]['Pressure_minutely'],
-            'Rain_minutely': call_weather[get_weather_information]['Rain_minutely'],
-            'Ref_time_minutely': call_weather[get_weather_information]['Ref_time_minutely'],
-            'Snow_minutely': call_weather[get_weather_information]['Snow_minutely'],
-            'Srise_time_minutely': call_weather[get_weather_information]['Srise_time_minutely'],
-            'sset_time_minutely': call_weather[get_weather_information]['sset_time_minutely'],
-            'Utc_offset_minutely': call_weather[get_weather_information]['Utc_offset_minutely'],
-            'Uvi_minutely': call_weather[get_weather_information]['Uvi_minutely'],
-            'Visibility_distance_minutely': call_weather[get_weather_information]['Visibility distance_minutely'],
-            'Temperature_minutely': call_weather[get_weather_information]['Temperature_minutely'],
-            'Wind_minutely': call_weather[get_weather_information]['Wind_minutely'],
         }
         results_list.append(results)
     context = {'city_weather': results_list}
