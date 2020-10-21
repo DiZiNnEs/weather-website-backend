@@ -88,38 +88,5 @@
         </div>
     {% endfor %}
 
-    <h1>Minutely weather</h1>
-
-    {% for city in city_weather %}
-        <div class="card" style="width: 11rem;">
-            <img class="card-img-top"
-                 src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast_minutely }}.png"
-                 alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                {% csrf_token %}
-                <p class="card-text">Clouds: {{ city.Clouds_minutely }}</p>
-                <p class="card-text">Humidity: {{ city.Humidity_minutely }}</p>
-                <p class="card-text">Status: {{ city.Status_minutely }}</p>
-                <p class="card-text">Detailed status: {{ city.Detailed_status_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.Temperature_minutely }}</p>
-
-                {# new #}
-                <p class="card-text">Temperature: {{ city.Heat_index_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.Pressure_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.Rain_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.Ref_time_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.Snow_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.Srise_time_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.sset_time_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.Utc_offset_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.Uvi_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.Detailed_status_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.Visibility_distance_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.Temperature_minutely }}</p>
-                <p class="card-text">Temperature: {{ city.Wind_minutely }}</p>
-            </div>
-        </div>
-    {% endfor %}
 
 {% endblock %}
