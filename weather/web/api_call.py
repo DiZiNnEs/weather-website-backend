@@ -68,27 +68,32 @@ def weather_all() -> Dict or List:
             'Wind_daily': one_call.forecast_daily[x].wind,
             'Weather_icon_name_daily': one_call.forecast_daily[x].weather_icon_name,
 
-            'Clouds_hourly': one_call.forecast_hourly[x].clouds,
-            'Dewpoint_hourly': one_call.forecast_hourly[x].dewpoint,
-            'Heat_index_hourly': one_call.forecast_hourly[x].heat_index,
-            'humidex_hourly': one_call.forecast_hourly[x].humidex,
-            'Pressure_hourly': one_call.forecast_hourly[x].pressure,
-            'Rain_hourly': one_call.forecast_hourly[x].rain,
-            'Ref_time_hourly': one_call.forecast_hourly[x].ref_time,
-            'Snow_hourly': one_call.forecast_hourly[x].snow,
-            'Srise_time_hourly': one_call.forecast_hourly[x].srise_time,
-            'sset_time_hourly': one_call.forecast_hourly[x].sset_time,
-            'Humidity_hourly': one_call.forecast_hourly[x].humidity,
-            'Utc_offset_hourly': one_call.forecast_hourly[x].utc_offset,
-            'Uvi_hourly': one_call.forecast_hourly[x].uvi,
-            'Status_hourly': one_call.forecast_hourly[x].status,
-            'Detailed status_hourly': one_call.forecast_hourly[x].detailed_status,
-            'Visibility distance_hourly': one_call.forecast_hourly[x].visibility_distance,
-            'Temperature_hourly': one_call.forecast_hourly[x].temperature().get("day", None),
-            'Wind_hourly': one_call.forecast_hourly[x].wind,
-            'Weather_icon_name_hourly': one_call.forecast_hourly[x].weather_icon_name,
 
         }
         weather_list.append(weather_dict)
+
+    for get_weather_information_2 in range(0, 48):
+        weather_dict = {
+            'Clouds_hourly': one_call.forecast_hourly[get_weather_information_2].clouds,
+            'Dewpoint_hourly': one_call.forecast_hourly[get_weather_information_2].dewpoint,
+            'Heat_index_hourly': one_call.forecast_hourly[get_weather_information_2].heat_index,
+            'humidex_hourly': one_call.forecast_hourly[get_weather_information_2].humidex,
+            'Pressure_hourly': one_call.forecast_hourly[get_weather_information_2].pressure,
+            'Rain_hourly': one_call.forecast_hourly[get_weather_information_2].rain,
+            'Ref_time_hourly': one_call.forecast_hourly[get_weather_information_2].ref_time,
+            'Snow_hourly': one_call.forecast_hourly[get_weather_information_2].snow,
+            'Srise_time_hourly': one_call.forecast_hourly[get_weather_information_2].srise_time,
+            'sset_time_hourly': one_call.forecast_hourly[get_weather_information_2].sset_time,
+            'Humidity_hourly': one_call.forecast_hourly[get_weather_information_2].humidity,
+            'Utc_offset_hourly': one_call.forecast_hourly[get_weather_information_2].utc_offset,
+            'Uvi_hourly': one_call.forecast_hourly[get_weather_information_2].uvi,
+            'Status_hourly': one_call.forecast_hourly[get_weather_information_2].status,
+            'Detailed status_hourly': one_call.forecast_hourly[get_weather_information_2].detailed_status,
+            'Visibility distance_hourly': one_call.forecast_hourly[get_weather_information_2].visibility_distance,
+            'Temperature_hourly': one_call.forecast_hourly[get_weather_information_2].temperature().get("day", None),
+            'Wind_hourly': one_call.forecast_hourly[get_weather_information_2].wind,
+            'Weather_icon_name_hourly': one_call.forecast_hourly[get_weather_information_2].weather_icon_name,
+        }
+    weather_list.append(weather_dict)
 
     return weather_list
