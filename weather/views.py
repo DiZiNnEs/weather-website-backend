@@ -63,33 +63,33 @@ def weather(request):
         }
         results_list.append(results)
 
-        for get_weather_information_hourly in range(19, 55):
-            results = {
-                'Clouds_hourly': call_weather[get_weather_information_hourly]['Clouds_hourly'],
-                'Humidity_hourly': call_weather[get_weather_information_hourly]['Humidity_hourly'],
-                'Status_hourly': call_weather[get_weather_information_hourly]['Status_hourly'],
-                'Detailed_status_hourly': call_weather[get_weather_information_hourly]['Detailed status_hourly'],
-                'Visibility_distance_forecast_hourly': call_weather[get_weather_information_hourly][
-                    'Visibility distance_hourly'],
-                'Temperature_forecast_hourly': call_weather[get_weather_information_hourly]['Temperature_hourly'],
-                'Weather_icon_name_forecast_hourly': call_weather[get_weather_information_hourly][
-                    'Weather_icon_name_hourly'],
-                #  new hourly
-                'Heat_index_hourly': call_weather[get_weather_information_hourly]['Heat_index_hourly'],
-                'Pressure_hourly': call_weather[get_weather_information_hourly]['Pressure_hourly'],
-                'Rain_hourly': call_weather[get_weather_information_hourly]['Rain_hourly'],
-                'Ref_time_hourly': call_weather[get_weather_information_hourly]['Ref_time_hourly'],
-                'Snow_hourly': call_weather[get_weather_information_hourly]['Snow_hourly'],
-                'Srise_time_hourly': call_weather[get_weather_information_hourly]['Srise_time_hourly'],
-                'sset_time_hourly': call_weather[get_weather_information_hourly]['sset_time_hourly'],
-                'Utc_offset_hourly': call_weather[get_weather_information_hourly]['Utc_offset_hourly'],
-                'Uvi_hourly': call_weather[get_weather_information_hourly]['Uvi_hourly'],
-                'Visibility_distance_hourly': call_weather[get_weather_information_hourly][
-                    'Visibility distance_hourly'],
-                'Temperature_hourly': call_weather[get_weather_information_hourly]['Temperature_hourly'],
-                'Wind_hourly': call_weather[get_weather_information_hourly]['Wind_hourly'],
-            }
-            results_list.append(results)
+    for get_weather_information_hourly in range(19, 55):
+        results = {
+            'Clouds_hourly': call_weather[get_weather_information_hourly]['Clouds_hourly'],
+            'Humidity_hourly': call_weather[get_weather_information_hourly]['Humidity_hourly'],
+            'Status_hourly': call_weather[get_weather_information_hourly]['Status_hourly'],
+            'Detailed_status_hourly': call_weather[get_weather_information_hourly]['Detailed status_hourly'],
+            'Visibility_distance_forecast_hourly': call_weather[get_weather_information_hourly][
+                'Visibility distance_hourly'],
+            'Temperature_forecast_hourly': call_weather[get_weather_information_hourly]['Temperature_hourly'],
+            'Weather_icon_name_forecast_hourly': call_weather[get_weather_information_hourly][
+                'Weather_icon_name_hourly'],
+            #  new hourly
+            'Heat_index_hourly': call_weather[get_weather_information_hourly]['Heat_index_hourly'],
+            'Pressure_hourly': call_weather[get_weather_information_hourly]['Pressure_hourly'],
+            'Rain_hourly': call_weather[get_weather_information_hourly]['Rain_hourly'],
+            'Ref_time_hourly': call_weather[get_weather_information_hourly]['Ref_time_hourly'],
+            'Snow_hourly': call_weather[get_weather_information_hourly]['Snow_hourly'],
+            'Srise_time_hourly': call_weather[get_weather_information_hourly]['Srise_time_hourly'],
+            'sset_time_hourly': call_weather[get_weather_information_hourly]['sset_time_hourly'],
+            'Utc_offset_hourly': call_weather[get_weather_information_hourly]['Utc_offset_hourly'],
+            'Uvi_hourly': call_weather[get_weather_information_hourly]['Uvi_hourly'],
+            'Visibility_distance_hourly': call_weather[get_weather_information_hourly][
+                'Visibility distance_hourly'],
+            'Temperature_hourly': call_weather[get_weather_information_hourly]['Temperature_hourly'],
+            'Wind_hourly': call_weather[get_weather_information_hourly]['Wind_hourly'],
+        }
+        results_list.append(results)
 
     context = {'city_weather': results_list}
 
