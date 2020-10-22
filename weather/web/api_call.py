@@ -46,7 +46,7 @@ def weather_current() -> Dict or List:
 def weather_all() -> Dict or List:
     weather_list = []
 
-    for x in range(0, 7):
+    for x in range(0, 8):
         weather_dict = {
             'Clouds_daily': one_call.forecast_daily[x].clouds,
             'Dewpoint_daily': one_call.forecast_daily[x].dewpoint,
@@ -94,6 +94,9 @@ def weather_all() -> Dict or List:
             'Wind_hourly': one_call.forecast_hourly[get_weather_information_2].wind,
             'Weather_icon_name_hourly': one_call.forecast_hourly[get_weather_information_2].weather_icon_name,
         }
-    weather_list.append(weather_dict)
+        weather_list.append(weather_dict)
 
     return weather_list
+
+
+print(weather_all())
