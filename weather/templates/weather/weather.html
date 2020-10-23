@@ -7,7 +7,6 @@
 {% endblock %}
 
 {% block body %}
-
     <section class="jumbotron text-center">
         <div class="container">
             <h1>All weather</h1>
@@ -23,8 +22,9 @@
         <button type="submit" class="btn btn-primary">Submit</button>
         <a href="{% url 'get_user_coordinates' %}">Get my location</a>
     </form>
+
     <h1>Daily weather</h1>
-    {% for city in city_weather %}
+    {% for city in city_weather_daily %}
         <div class="card" style="width: 11rem;">
             <img class="card-img-top"
                  src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast_daily }}.png"
@@ -37,7 +37,6 @@
                 <p class="card-text">Status: {{ city.Status_daily }}</p>
                 <p class="card-text">Detailed status: {{ city.Detailed_status_daily }}</p>
                 <p class="card-text">Temperature: {{ city.Temperature_daily }}</p>
-                {# new #}
                 <p class="card-text">Heat_index_daily: {{ city.Heat_index_daily }}</p>
                 <p class="card-text">Pressure_daily: {{ city.Pressure_daily }}</p>
                 <p class="card-text">Rain_daily: {{ city.Rain_daily }}</p>
@@ -51,13 +50,13 @@
                 <p class="card-text">Visibility_distance_daily: {{ city.Visibility_distance_daily }}</p>
                 <p class="card-text">Temperature_daily: {{ city.Temperature_daily }}</p>
                 <p class="card-text">Wind_daily: {{ city.Wind_daily }}</p>
-
             </div>
         </div>
     {% endfor %}
 
+
     <h1>Hourly weather</h1>
-    {% for city in city_weather %}
+    {% for city in city_weather_hourly %}
         <div class="card" style="width: 11rem;">
             <img class="card-img-top"
                  src="http://openweathermap.org/img/w/{{ city.Weather_icon_name_forecast_hourly }}.png"
@@ -87,6 +86,5 @@
             </div>
         </div>
     {% endfor %}
-
 
 {% endblock %}
