@@ -68,7 +68,6 @@ def weather_all() -> Dict or List:
             'Wind_daily': one_call.forecast_daily[x].wind,
             'Weather_icon_name_daily': one_call.forecast_daily[x].weather_icon_name,
 
-
         }
         weather_list.append(weather_dict)
 
@@ -97,6 +96,3 @@ def weather_all() -> Dict or List:
         weather_list.append(weather_dict)
 
     return weather_list
-
-
-print(weather_all())
